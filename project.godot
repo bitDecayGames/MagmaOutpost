@@ -11,7 +11,13 @@ config_version=3
 [application]
 
 config/name="Magma Outpost"
+run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=180
+window/size/height=320
 
 [rendering]
 
