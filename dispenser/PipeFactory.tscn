@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://PipeFactory.gd" type="Script" id=1]
+[ext_resource path="res://pipes/CornerPipe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://pipes/CrossoverPipe.tscn" type="PackedScene" id=3]
+[ext_resource path="res://pipes/FourWayPipe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://pipes/StraightPipe.tscn" type="PackedScene" id=5]
+[ext_resource path="res://pipes/TeePipe.tscn" type="PackedScene" id=6]
+
+[node name="PipeFactory" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" parent="." index="0" instance=ExtResource( 2 )]
+
+visible = false
+position = Vector2( 76.4543, 69.8061 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="AnimatedSprite2" parent="." index="1" instance=ExtResource( 3 )]
+
+visible = false
+position = Vector2( 224.931, 68.6981 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="AnimatedSprite3" parent="." index="2" instance=ExtResource( 4 )]
+
+visible = false
+position = Vector2( 390.028, 73.1302 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="AnimatedSprite4" parent="." index="3" instance=ExtResource( 5 )]
+
+visible = false
+position = Vector2( 539.612, 70.9141 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="AnimatedSprite5" parent="." index="4" instance=ExtResource( 6 )]
+
+visible = false
+position = Vector2( 691.413, 69.8061 )
+_sections_unfolded = [ "Z Index" ]
+
+
