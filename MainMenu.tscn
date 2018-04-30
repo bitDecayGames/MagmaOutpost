@@ -14,10 +14,9 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 6, 6 )
 texture = ExtResource( 1 )
 centered = false
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="MainMenuHUD" parent="." index="1" instance=ExtResource( 2 )]
 
