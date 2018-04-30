@@ -6,6 +6,7 @@ var num_pieces = 4
 var tile_size = 32 * 5
 var pieces = {}
 
+var sizing_speed = 500
 var falling_speed = 300
 
 func get_offset(tile_num):
@@ -18,15 +19,20 @@ func _ready():
 	$Overlay/DispenserMid.position.y = offset
 	$Underlay/DispenserBottom.position.y = offset
 	
-	for i in range(num_pieces - 1):
-		print("Spawning pane %d" % i)
-		var pane = Glass.instance()
-		pane.position.y = get_offset(i)
-		pane.modulate.a = 0.50
-		$Overlay.add_child(pane)
+	$Overlay/GlassPatch.rect_size.x = tile_size
+	$Overlay/GlassPatch.rect_size.y = tile_size * (num_pieces - 1)
+	$Overlay/GlassPatch.modulate.a = 0.50
+	
+	#for i in range(num_pieces - 1):
+	#	print("Spawning pane %d" % i)
+	#	var pane = Glass.instance()
+	#	pane.position.y = get_offset(i)
+	#	pane.modulate.a = 0.50
+	#	$Overlay.add_child(pane)
 
 var time_passed = 0
 var eat_piece = 0
+var resize_timer = 4.6
 
 func _process(delta):
 	# test code
@@ -42,7 +48,15 @@ func _process(delta):
 		if pieces.has(num_pieces - 1):
 			pieces[num_pieces - 1].queue_free()
 			pieces.erase(num_pieces - 1)
+			
+	resize_timer -= delta
+	if resize_timer <= 0:
+		num_pieces += 1
+		resize_timer = 4.6
 	# end test code
+	
+	# properly place bottom of dispenser
+	size_dispenser(delta)
 	
 	# shift pieces down if needed
 	for i in range(0, num_pieces - 1):
@@ -59,6 +73,15 @@ func _process(delta):
 			pieces[piece_num].position.y += falling_speed * delta
 		else:
 			pieces[piece_num].position.y = get_offset(piece_num)
+			
+func size_dispenser(delta):
+	if $Underlay/DispenserBottom.position.y < get_offset(num_pieces - 1):
+		$Underlay/DispenserBottom.position.y += sizing_speed * delta
+		$Overlay/DispenserMid.position.y = $Underlay/DispenserBottom.position.y
+	else:
+		$Underlay/DispenserBottom.position.y = get_offset(num_pieces - 1)
+		$Overlay/DispenserMid.position.y = get_offset(num_pieces - 1)
+	$Overlay/GlassPatch.rect_size.y = $Underlay/DispenserBottom.position.y
 			
 func room_for_piece():
 	return !pieces.has(0)

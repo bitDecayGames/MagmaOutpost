@@ -4,7 +4,7 @@
 [ext_resource path="res://MainMenuHUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://dispenser/Dispenser.tscn" type="PackedScene" id=3]
 
-[node name="TitleElements" type="CanvasLayer" index="0"]
+[node name="TitleElements" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
