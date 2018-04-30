@@ -7,7 +7,7 @@
 [ext_resource path="res://dispenser/DispenserMid.tscn" type="PackedScene" id=5]
 [ext_resource path="res://dispenser/DispenserBottom.tscn" type="PackedScene" id=6]
 
-[node name="Dispenser" type="Node2D" index="0"]
+[node name="Dispenser" type="Node2D"]
 
 script = ExtResource( 1 )
 Glass = ExtResource( 2 )
@@ -38,7 +38,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Underlay" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="DispenserBottom" parent="Underlay" index="0" instance=ExtResource( 6 )]

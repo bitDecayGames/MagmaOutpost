@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MagmaOutpostTitleSized.png" type="Texture" id=1]
 [ext_resource path="res://MainMenuHUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://dispenser/Dispenser.tscn" type="PackedScene" id=3]
 
-[node name="TitleElements" type="CanvasLayer"]
+[node name="TitleElements" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -19,5 +20,9 @@ centered = false
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="MainMenuHUD" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="Dispenser" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 794.551, 1041.14 )
 
 
