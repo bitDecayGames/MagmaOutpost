@@ -8,7 +8,7 @@
 [ext_resource path="res://dispenser/PipeDispenserGlass.png" type="Texture" id=6]
 [ext_resource path="res://dispenser/DispenserBottom.tscn" type="PackedScene" id=7]
 
-[node name="Dispenser" type="Node2D" index="0"]
+[node name="Dispenser" type="Node2D"]
 
 script = ExtResource( 1 )
 Glass = ExtResource( 2 )
@@ -57,10 +57,40 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Underlay" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="DispenserBottom" parent="Underlay" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 0, 300 )
+
+[node name="Timers" type="Node2D" parent="." index="4"]
+
+[node name="Spawn" type="Timer" parent="Timers" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="DebugConsume" type="Timer" parent="Timers" index="1"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = true
+
+[node name="DebugExpand" type="Timer" parent="Timers" index="2"]
+
+process_mode = 1
+wait_time = 5.2
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timers/Spawn" to="." method="_on_Spawn_timeout"]
+
+[connection signal="timeout" from="Timers/DebugConsume" to="." method="_on_DebugConsume_timeout"]
+
+[connection signal="timeout" from="Timers/DebugExpand" to="." method="_on_DebugExpand_timeout"]
 
 
