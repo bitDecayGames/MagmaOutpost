@@ -46,10 +46,10 @@ func _shift_pieces(delta):
 	# assume settled until we find some piece still settling
 	settled = true
 	for piece_num in pieces.keys():
-		if pieces[piece_num].position.y < _get_offset(piece_num):
+		if !_is_piece_settled(piece_num):
 			settled = false
 			pieces[piece_num].position.y += falling_speed * delta
-		if pieces[piece_num].position.y >= _get_offset(piece_num):
+		if _is_piece_settled(piece_num):
 			pieces[piece_num].position.y = _get_offset(piece_num)
 			
 func _size_dispenser(delta):
@@ -61,6 +61,10 @@ func _size_dispenser(delta):
 		$Overlay/DispenserMid.position.y = _get_offset(num_pieces - 1)
 	$Overlay/GlassPatch.rect_size.y = $Underlay/DispenserBottom.position.y
 			
+			
+func _is_piece_settled(piece_num):
+	return pieces[piece_num].position.y >= _get_offset(piece_num)
+	
 func _room_for_piece():
 	return !pieces.has(0)
 	

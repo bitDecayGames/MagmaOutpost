@@ -57,7 +57,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Underlay" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="DispenserBottom" parent="Underlay" index="0" instance=ExtResource( 7 )]
@@ -78,14 +77,14 @@ autostart = false
 process_mode = 1
 wait_time = 3.0
 one_shot = false
-autostart = true
+autostart = false
 
 [node name="DebugExpand" type="Timer" parent="Timers" index="2"]
 
 process_mode = 1
 wait_time = 5.2
 one_shot = false
-autostart = true
+autostart = false
 
 [connection signal="timeout" from="Timers/Spawn" to="." method="_on_Spawn_timeout"]
 
