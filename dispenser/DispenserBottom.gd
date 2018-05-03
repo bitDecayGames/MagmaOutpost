@@ -9,4 +9,4 @@ func _ready():
 
 func _on_ClickArea_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-        print("Clicked!")
+        print("Clicked dispenser!")

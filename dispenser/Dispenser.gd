@@ -80,7 +80,8 @@ func _spawn_new_piece():
 func get_next_piece():
 	if pieces.has(num_pieces-1):
 		var piece = pieces[num_pieces-1]
-		pieces[num_pieces - 1].queue_free()
+		#pieces[num_pieces - 1].queue_free()
+		remove_child(piece)
 		pieces.erase(num_pieces-1)
 		return piece
 	else:

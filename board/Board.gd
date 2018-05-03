@@ -1,5 +1,7 @@
 extends Node2D
 
+signal board_tile_clicked(pos)
+
 var board_width = 5
 var board_height = 5
 
@@ -13,10 +15,15 @@ func _ready():
 			var z = Zone.instance()
 			z.position.x = x * tile_size
 			z.position.y = y * tile_size
+			z.connect("zone_clicked", self, "_send_click_sig")
 			print("Building zone %d, %d at (%d, %d)" % [x, y, z.position.x, z.position.y])
 			add_child(z)
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _send_click_sig(pos):
+	print("ClickPosition: %s" % [pos / tile_size])
+	emit_signal("board_tile_clicked", pos / tile_size)
+	
+func set_piece(tile, pos):
+	add_child(tile)
+	tile.position.x = pos.x * tile_size
+	tile.position.y = pos.y * tile_size
