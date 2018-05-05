@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://pipes/tiles/pipe_tile_06.png" type="Texture" id=1]
 [ext_resource path="res://pipes/tiles/pipe_tile_07.png" type="Texture" id=2]
+[ext_resource path="res://pipes/Pipe.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -12,10 +13,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="AnimatedSprite" type="AnimatedSprite"]
+[node name="CrossoverPipe" type="AnimatedSprite"]
 
 frames = SubResource( 1 )
 animation = "default"
 centered = false
+script = ExtResource( 3 )
 
 

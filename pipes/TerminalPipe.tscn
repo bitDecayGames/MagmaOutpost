@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://pipes/tiles/pipe_tile_02.png" type="Texture" id=1]
-[ext_resource path="res://pipes/tiles/pipe_tile_03.png" type="Texture" id=2]
-[ext_resource path="res://pipes/tiles/pipe_tile_04.png" type="Texture" id=3]
-[ext_resource path="res://pipes/tiles/pipe_tile_05.png" type="Texture" id=4]
+[ext_resource path="res://pipes/tiles/pipe_tile_17.png" type="Texture" id=1]
+[ext_resource path="res://pipes/tiles/pipe_tile_18.png" type="Texture" id=2]
+[ext_resource path="res://pipes/tiles/pipe_tile_19.png" type="Texture" id=3]
+[ext_resource path="res://pipes/tiles/pipe_tile_20.png" type="Texture" id=4]
 [ext_resource path="res://pipes/Pipe.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -15,7 +15,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="TeePipe" type="AnimatedSprite"]
+[node name="TerminalPipe" type="AnimatedSprite"]
 
 frames = SubResource( 1 )
 animation = "default"

@@ -10,7 +10,6 @@
 
 [node name="Dispenser" type="Node2D"]
 
-editor/display_folded = true
 script = ExtResource( 1 )
 Glass = ExtResource( 2 )
 
