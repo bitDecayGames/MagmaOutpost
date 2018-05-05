@@ -1,37 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://dispenser/PipeFactory.gd" type="Script" id=1]
-[ext_resource path="res://pipes/CornerPipe.tscn" type="PackedScene" id=2]
-[ext_resource path="res://pipes/CrossoverPipe.tscn" type="PackedScene" id=3]
-[ext_resource path="res://pipes/FourWayPipe.tscn" type="PackedScene" id=4]
-[ext_resource path="res://pipes/StraightPipe.tscn" type="PackedScene" id=5]
-[ext_resource path="res://pipes/TeePipe.tscn" type="PackedScene" id=6]
-[ext_resource path="res://pipes/TerminalPipe.tscn" type="PackedScene" id=7]
 
 [node name="PipeFactory" type="Node" index="0"]
 
 script = ExtResource( 1 )
-
-[node name="CornerPipe" parent="." index="0" instance=ExtResource( 2 )]
-
-[node name="CrossoverPipe" parent="." index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 182.388, 7.53668 )
-
-[node name="FourWayPipe" parent="." index="2" instance=ExtResource( 4 )]
-
-position = Vector2( 419.04, 9.04405 )
-
-[node name="StraightPipe" parent="." index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 630.068, 6.02936 )
-
-[node name="TeePipe" parent="." index="4" instance=ExtResource( 6 )]
-
-position = Vector2( 826.022, 25.6247 )
-
-[node name="TerminalPipe" parent="." index="5" instance=ExtResource( 7 )]
-
-position = Vector2( 93.455, 218.564 )
 
 
