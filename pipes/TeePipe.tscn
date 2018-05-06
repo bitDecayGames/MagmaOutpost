@@ -15,15 +15,15 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Pipe" type="AnimatedSprite"]
+[node name="Pipe" type="AnimatedSprite" index="0"]
 
 frames = SubResource( 1 )
 animation = "default"
 centered = false
 script = ExtResource( 5 )
-side_0_connections = [ 2 ]
-side_1_connections = [ 3 ]
-side_2_connections = [ 3 ]
-side_3_connections = [ 0, 1, 2 ]
+left_connections = 10
+up_connections = 9
+right_connections = 0
+down_connections = 3
 
 

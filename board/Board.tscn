@@ -3,7 +3,7 @@
 [ext_resource path="res://board/Board.gd" type="Script" id=1]
 [ext_resource path="res://zone/Zone.tscn" type="PackedScene" id=2]
 
-[node name="Board" type="Node2D"]
+[node name="Board" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 Zone = ExtResource( 2 )

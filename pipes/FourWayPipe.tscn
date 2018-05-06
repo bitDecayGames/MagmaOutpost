@@ -18,9 +18,9 @@ frames = SubResource( 1 )
 animation = "default"
 centered = false
 script = ExtResource( 2 )
-side_0_connections = [ 2 ]
-side_1_connections = [ 3 ]
-side_2_connections = [ 3 ]
-side_3_connections = [ 0, 1, 2 ]
+left_connections = 14
+up_connections = 13
+right_connections = 11
+down_connections = 7
 
 

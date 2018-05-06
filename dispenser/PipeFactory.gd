@@ -43,5 +43,6 @@ func generate_pipe():
 		else:
 			rand -= piece_odds[category]
 	var piece = scenes[selection].instance()
-	piece.pipe_rotation = randi() % 4
+	piece.clockwise_spins = randi() % 4
+	print("Generating a %s with %d spins" % [selection, piece.clockwise_spins])
 	return piece

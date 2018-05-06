@@ -15,16 +15,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Pipe" type="AnimatedSprite" index="0"]
+[node name="Pipe" type="AnimatedSprite"]
 
 frames = SubResource( 1 )
 animation = "default"
 centered = false
 script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
-side_0_connections = [ 2 ]
-side_1_connections = [ 3 ]
-side_2_connections = [ 3 ]
-side_3_connections = [ 0, 1, 2 ]
+left_connections = 8
+up_connections = 0
+right_connections = 0
+down_connections = 1
 
 
