@@ -7,17 +7,21 @@
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[node name="StraightPipe" type="AnimatedSprite"]
+[node name="Pipe" type="AnimatedSprite"]
 
 frames = SubResource( 1 )
 animation = "default"
 centered = false
 script = ExtResource( 3 )
+side_0_connections = [ 2 ]
+side_1_connections = [ 3 ]
+side_2_connections = [ 3 ]
+side_3_connections = [ 0, 1, 2 ]
 
 
